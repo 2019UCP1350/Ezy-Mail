@@ -18,6 +18,7 @@ app.use('/',authRoute);
 app.use(cors())
 
 
-app.listen(5000,function(){
+app.listen(process.env.PORT || 5000,function(){
+    
     console.log("server running on 5000");
 });
