@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
     try {
          const savedUser = await user.save();
         console.log('a')
-        var link="http://localhost:5000/verify/" + savedUser._id;
+        var link="https://ezymailserver.herokuapp.com/verify/" + savedUser._id;
         console.log('aa')
         var mailoptions={
             from:"ezymail.mailer@gmail.com",
@@ -61,7 +61,7 @@ router.get('/verify/:id',async(req,res)=>{
     const user = await User.findById(req.params.id);
     user.isverified = true;
     await User.findOneAndUpdate({_id:req.params.id},user);
-    return res.redirect("http://localhost:3000/login")
+    return res.redirect("https://ezy-mail.netlify.app/login")
 
 });
 router.post("/addlist", async (req, res) => {
