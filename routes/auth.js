@@ -64,25 +64,29 @@ router.get('/verify/:id',async(req,res)=>{
     return res.redirect("http://localhost:3000/login")
 
 });
-router.post("/addlist",async (req,res) => {
-    try
-    {
-      const user = await User.findOne({email:req.body.email});
-      if(!user)
-      {
-        return res.status(500).send("Server Error");
-      }
-      user.emailList.push(req.body.emailObject);
-      await User.findOneAndUpdate({email:req.body.email},user);
-      return res.json({user});
-
+router.post("/addlist", async (req, res) => {
+  console.log(req.body);
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      return res.status(500).send("Server Error");
     }
-
-    catch(err)
-    {
-      console.log(err);
-      res.status(400).send(err);
-    }
+    const now=Date.now();
+    user.emailList.push({
+      userId: user._id,
+      to: req.body.to,
+      cc: req.body.cc,
+      subject: req.body.subject,
+      schedule: req.body.schedule,
+      content: req.body.content,
+      time:now,
+    });
+    await User.findOneAndUpdate({ email: req.body.email }, user);
+    return res.json({ user });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send(err);
+  }
 });
 router.get("/history/:email",async (req,res) =>{
     try{

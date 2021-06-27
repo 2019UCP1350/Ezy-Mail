@@ -1,6 +1,6 @@
 const express = require("express");
 const app=express();
-
+const cors=require('cors')
 const authRoute = require('./routes/auth');
 
 
@@ -15,6 +15,7 @@ mongoose.connect(process.env.DB_CONNECT,{
 //middlewaew
 app.use(express.json());
 app.use('/',authRoute);
+app.use(cors())
 
 
 app.listen(5000,function(){
