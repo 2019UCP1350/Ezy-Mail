@@ -14,11 +14,12 @@ mongoose.connect(process.env.DB_CONNECT,{
  },()=>console.log('connected to db'));
 //middlewaew
 app.use(express.json());
-app.use('/',authRoute);
 app.use(cors())
+app.use('/',authRoute);
 
 
-app.listen(process.env.PORT || 5000,function(){
+
+app.listen(process.env.PORT || 3001,function(){
     
-    console.log("server running on 5000");
+    console.log("server running on 3001");
 });
