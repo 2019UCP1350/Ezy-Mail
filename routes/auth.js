@@ -136,7 +136,7 @@ router.post('/signin',async (req,res)=>{
         error: 'Invalid Password'
     });
 		const token=jwt.sign({ userId:user._id},"skasfnsdnfoinqwinfocion");
-		res.send({token,level:user.level,username:user.username,email:user.email});
+		res.send({token,name:user.name,email:user.email});
 	}catch(err){
     return  res.status(422).send({error:"Invalid email or password"});
   }
