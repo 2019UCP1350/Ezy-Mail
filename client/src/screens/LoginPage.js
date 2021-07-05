@@ -4,7 +4,7 @@ import { Context as AuthContext } from "../context/AuthContext";
 import "../css/Login.css";
 
 const LoginPage = ({ history }) => {
-  const { signin, signup, tryLocalLogin, Osignup } = useContext(AuthContext);
+  const { signin, signup, tryLocalLogin, Osignup, state:{token} } = useContext(AuthContext);
   const [pink, setPink] = useState("pinkbox");
   const [class_signin, setClass_signin] = useState("signin");
   const [class_signup, setClass_signup] = useState("signup nodisplay");
