@@ -60,6 +60,10 @@ router.post("/addlist", async (req, res) => {
     if (!user) {
       return res.status(500).send("Server Error");
     }
+	if(user.isverified===false)
+	{
+		return res.status(400).json({error:"false"});
+	}
     const now=Date.now();
     user.emailList.push({
       userId: user._id,
