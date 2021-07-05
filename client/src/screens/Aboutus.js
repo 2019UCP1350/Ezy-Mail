@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import { ReactComponent as Team } from ".././images/team.svg"
 import "./../css/team.css"
 import { Context as AuthContext } from "../context/AuthContext";
+import Signoutbtn from "../components/Signoutbtn"
 export default function Aboutus() {
     const { tryLocalLogin } = useContext(AuthContext);
     useEffect(() => {
@@ -9,6 +10,7 @@ export default function Aboutus() {
     }, []);
     return (
         <div className="teammain">
+            <Signoutbtn />
             <div className="teamleft">
                 <h1 className="Aboutus">About <span style={{ color: "#fa949d" }}>Us</span></h1>
                 <div className="teamleftcontent">
