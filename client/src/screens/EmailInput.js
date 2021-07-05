@@ -20,7 +20,7 @@ function EmailInput() {
     const submit = async () => {
         if (to.length && cc.length)
             try {
-                await axios.post("/addlist", {
+                var result=await axios.post("/addlist", {
                     to,
                     cc,
                     subject,
@@ -28,7 +28,11 @@ function EmailInput() {
                     content,
                     email,
                 });
+                if(result.error){
+                    alert("Verify Your email");
+                }
             } catch (error) {
+                
                 console.log(error);
             }
     };
