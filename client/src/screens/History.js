@@ -31,7 +31,7 @@ function History({history}) {
     };
 
     PostData();
-  }, []);
+  },);
 
   return (
     <div>
