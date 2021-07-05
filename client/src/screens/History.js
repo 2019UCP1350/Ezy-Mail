@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import EmailCard from './EmailCard';
 import { Context as AuthContext } from "../context/AuthContext"
 import Signoutbtn from "../components/Signoutbtn"
+import ReactHtmlParser from 'react-html-parser';
 
 function History() { 
   const { tryLocalLogin } = useContext(AuthContext);
@@ -39,7 +40,7 @@ function History() {
             date={x.time}
             to={x.to}
             schedule={x.schedule}
-            content={x.content}
+            content={ReactHtmlParser(x.content)}
           />
         })
       }
