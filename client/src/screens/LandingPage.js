@@ -165,9 +165,6 @@ const LandingPage = () => {
   function HandleSubmit() {
     history.push(`/login`);
   }
-  if (token) {
-    history.push("/home");
-  }
 
   return (
     <div className="App">
