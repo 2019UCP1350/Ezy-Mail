@@ -142,10 +142,7 @@ function EmailInput() {
                         <option value="2">Weekly schedule</option>
                         <option value="3">Monthly schedule</option>
                         <option value="4">Yearly schedule</option>
-                    </select>
-                    <label htmlFor="schedule" className="form__label">
-                        <p style={{ fontSize: "20px" }}>Schedule</p>
-                    </label>
+                    </select>                  
                 </div>
             </div>
             <div className="input2">
