@@ -20,7 +20,7 @@ function EmailInput() {
     } = useContext(AuthContext);
     useEffect(() => {
         tryLocalLogin();
-    }, []);
+    }, [tryLocalLogin]);
     const submit = async () => {
         if (to.length && cc.length){
             setBtn("composebutton compose--loading");
