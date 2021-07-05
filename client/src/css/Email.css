@@ -109,21 +109,28 @@
   font-weight: 500;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-.signoutbutton{
-  position: absolute;
-  top:0;
-  margin-top: 2%;
-  right: 0;
-  margin-right: 3%;
-  z-index:1000;
-  background-color:#e91e63;
+.signoutbutton {
+  background-color: #e91e63;
   padding: 15px;
   border-radius: 10px;
-  justify-content: center;
-  display: flex;
-  align-items: center;
   color: white;
   font-weight: bold;
   cursor: pointer;
-
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.signoutdiv {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 2%;
+  margin-right: 60px;
+  z-index: 1000;
+  width: 18%;
 }
