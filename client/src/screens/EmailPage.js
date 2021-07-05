@@ -17,7 +17,7 @@ function EmailPage({history}) {
       glare: true,
       "max-glare": 1,
     });
-  }, [tryLocalLogin,token,history]);
+  }, );
   return (
     <div className="glass">
       <Signoutbtn></Signoutbtn>
