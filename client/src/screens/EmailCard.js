@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./../css/EmailCard.css"
 function EmailCard(props) {    
     var date = new Date(props.date);
