@@ -19,6 +19,9 @@ const LandingPage = () => {
   let history = useHistory();
   useEffect(() => {
     tryLocalLogin();
+    if(token){
+      history.push("/home");
+    }
     gsap.to(".layer-1", { y: "-100vh", delay: 0.5 });
     gsap.to(".layer-2", { y: "-100vh", delay: 0.7 });
     gsap.to(".layer-3", { y: "-100vh", delay: 0.9 });
