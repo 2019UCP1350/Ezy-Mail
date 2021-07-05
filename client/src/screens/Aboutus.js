@@ -3,11 +3,14 @@ import { ReactComponent as Team } from ".././images/team.svg"
 import "./../css/team.css"
 import { Context as AuthContext } from "../context/AuthContext";
 import Signoutbtn from "../components/Signoutbtn"
-export default function Aboutus() {
-    const { tryLocalLogin } = useContext(AuthContext);
+export default function Aboutus({history}) {
+    const { tryLocalLogin,state:{token} } = useContext(AuthContext);
     useEffect(() => {
         tryLocalLogin();
-    }, []);
+        if(!token){
+            history.push("/");
+          }
+    }, [token,tryLocalLogin,history]);
     return (
         <div className="teammain">
             <Signoutbtn />
