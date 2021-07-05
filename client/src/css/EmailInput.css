@@ -171,5 +171,50 @@ input[type=file]::-webkit-file-upload-button {
     background-color: #81ecec;
     border: 2px solid #00cec9;
   }
+.composebutton {
+  margin-top: 10px;
+  position: relative;
+  padding: 8px 16px;
+  background-color: #009579;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 40%;
+}
+.composebutton:active {
+  background: #007a63;
+}
+.button_text {
+  font: 20px "Quicksand", san-serif;
+  color: white;
+  transition: all 0.2s;
+}
+.compose--loading .button_text {
+  visibility: hidden;
+  opacity: 0;
+}
+.compose--loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  margin-left: 40%;
+  margin-top: 5%;
+  border: 4px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: compse--loading-spinner 1s ease infinite;
+}
+@keyframes compse--loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
   
   
