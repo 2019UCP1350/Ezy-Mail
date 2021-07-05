@@ -138,8 +138,7 @@ function EmailInput() {
                         onChange={({ target }) => { setSchedule(target.value) }}
                         required
                     >
-                        <option option value="" selected disabled hidden></option>
-                        <option value="1">Recurring schedule</option>
+                        <option value="1" selected  >Recurring schedule</option>
                         <option value="2">Weekly schedule</option>
                         <option value="3">Monthly schedule</option>
                         <option value="4">Yearly schedule</option>
