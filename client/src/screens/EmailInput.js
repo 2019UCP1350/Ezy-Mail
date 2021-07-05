@@ -2,7 +2,9 @@ import React, { useState, useContext, useEffect } from "react";
 import ReactQuill from "react-quill";
 import axios from "../Api/axios";
 import "react-quill/dist/quill.snow.css";
+import { useHistory } from "react-router-dom";
 import "../css/EmailInput.css";
+let history = useHistory();
 import { Context as AuthContext } from "../context/AuthContext";
 function EmailInput() {
     const [to, setTo] = useState([]);
@@ -30,6 +32,10 @@ function EmailInput() {
                 });
                 if(result.error){
                     alert("Verify Your email");
+                }
+              
+                    else{
+                    history.push("https://ezy-mail1.herokuapp.com/");
                 }
             } catch (error) {
                 
