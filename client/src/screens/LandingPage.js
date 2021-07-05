@@ -160,7 +160,7 @@ const LandingPage = () => {
         start: "top top+=50",
       },
     });
-  }, [token]);
+  }, );
 
   function HandleSubmit() {
     history.push(`/login`);
