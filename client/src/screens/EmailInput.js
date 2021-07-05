@@ -13,6 +13,7 @@ function EmailInput() {
     const [subject, setSubject] = useState("");
     const [schedule, setSchedule] = useState("");
     const [content, setContent] = useState("");
+    const [btn,setBtn]=useState("composebutton");
     const {
         state: { email },
         tryLocalLogin,
@@ -21,9 +22,8 @@ function EmailInput() {
         tryLocalLogin();
     }, []);
     const submit = async () => {
-        var element = document.getElementById("composebuttonid");
-        element.classList.toggle("compose--loading");
-        if (to.length && cc.length)
+        if (to.length && cc.length){
+            setBtn("compose--loading");
             try {
                 var result=await axios.post("/addlist", {
                     to,
@@ -36,14 +36,16 @@ function EmailInput() {
                 if(result.error){
                     alert("Verify Your email");
                 }
-              
-                    else{
+                else{
                     history.push("/history");
                 }
             } catch (error) {
                 
                 console.log(error);
             }
+        }else{
+            alert("Enter valid fields");
+        }
     };
     const file1 = (event) => {
         let file = event.target.files[0];
@@ -154,8 +156,8 @@ function EmailInput() {
                     onChange={(value) => setContent(value)}
                 />
             </div>
-            <button type ="button" id="composebuttonid" class="composebutton" onClick={submit}>
-                <span class="button_text">Send Mail</span>
+            <button type ="button" className={btn} onClick={submit}>
+                <span className="button_text">Send Mail</span>
             </button>
             
         </div>
