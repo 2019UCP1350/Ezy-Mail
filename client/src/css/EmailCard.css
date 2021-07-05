@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat+Alternates&display=swap');
+body{
+    background-color: #5c2eda;
+}
+.Mailsend{
+    margin-left: 5%;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.emailCard{
+    display:flex;
+    /* border:1px solid black; */
+    
+margin-left: 6%;
+margin-right: 6%;
+margin-top: 4%;
+padding: 10px;
+}
+.emailLeft{
+    border-radius: 31px;
+background: #8fc1c0;
+box-shadow:  5px 5px 10px #8fc1c0, -5px -5px 10px #8fc1c0;
+    flex:1;
+    /* border:1px solid black; */
+    margin-right: 10px;
+    background-color: #8fc1c0;
+
+}
+.emailLeft:hover{
+    border-radius: 31px;
+background: #8fc1c0;
+box-shadow:  50px 50px 100px #666666, -50px -50px 100px #8fc1c0;
+transition: ease 0.5s;
+    }
+.emailLeftTop{
+   text-align: center;
+    padding-top: 10px;
+    font-size: 25px;
+}
+.emailLeftBottom{
+    margin-left: 10%;
+    font-size: 20px;
+
+}
+
+.emailRight{
+    
+    margin-left: 10px;
+    border-radius: 31px;
+    background: #fa949d;
+    box-shadow:  5px 5px 10px #fa949d,-5px -5px 10px #fa949d;
+    flex:3;
+    margin-left: 7%;
+    padding-left: 2%;
+  
+    font-size: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+    
+    /* border:1px solid black; */
+}
+.emailRight h4{
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+}
+
+.emailRight:hover{
+    border-radius: 31px;
+background: #fa949d;
+box-shadow:  50px 50px 100px #666666,-50px -50px 100px #fa949d;
+transition: ease 0.5s;
+}
+/* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; transition: top ease 0.5s;*/

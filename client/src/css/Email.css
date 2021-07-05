@@ -1,0 +1,129 @@
+@import url("https://fonts://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+.glass {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2d283e;
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f00, #f0f);
+  clip-path: circle(30% at right 70%);
+}
+
+.glass::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(20% at 10% 10%);
+}
+
+.glass .emailcontainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.glass .emailcontainer .card {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.glass .emailcontainer .card .emailcontent {
+  padding: 20px;
+  text-align: center;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.glass .emailcontainer .card:hover .emailcontent {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.glass .emailcontainer .card h2 {
+  position: absolute;
+  top: -100px;
+  right: 30px;
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.glass .emailcontainer .card .emailcontent h3 {
+  font-size: 20px;
+  color: #fff;
+  z-index: 1;
+}
+
+.glass .emailcontainer .card .emailcontent p {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+}
+
+.glass .emailcontainer .card .emailcontent a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  margin-top: 15px;
+  background: #fff;
+  color: #000;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.signoutbutton{
+  position: absolute;
+  top:0;
+  margin-top: 2%;
+  right: 0;
+  margin-right: 3%;
+  z-index:1000;
+  background-color:#e91e63;
+  padding: 15px;
+  border-radius: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+}

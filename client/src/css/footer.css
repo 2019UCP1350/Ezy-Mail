@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap");
+.footcontainer {
+  overflow: hidden;
+  height: 100vh;
+  background-color: #2d283e;
+}
+
+#footer {
+  height: 80vh;
+}
+
+.footerspan {
+  position: absolute;
+  pointer-events: none;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(-500%);
+    opacity: 0;
+  }
+}
+
+.footcircle {
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.9;
+}
+
+.circle1 {
+  background-color: #d1d7e0;
+  height: 35vh;
+  width: 35vh;
+  margin-top: -34%;
+  margin-left: 12%;
+  z-index: 1000;
+}
+
+.circle2 {
+  background-color: #802bb1;
+  height: 65vh;
+  width: 65vh;
+  z-index: 1001;
+  margin-top: -31%;
+  margin-left: 20%;
+  text-align: center;
+}
+
+.circle3 {
+  background-color: #564f6f;
+  height: 25vh;
+  width: 25vh;
+  z-index: 1002;
+  margin-top: -10%;
+  margin-left: 40%;
+  opacity: 0.8;
+}
+
+.circletext {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: white;
+  font-family: "Mulish", sans-serif;
+  font-weight: bold;
+}
+
+.sideinfo {
+  height: 100vh;
+  width: 100vh;
+  /* background-color: white; */
+  position: absolute;
+  top: 0;
+  margin-left: 130vh;
+  margin-top: 10vh;
+  font-family: "Mulish", sans-serif;
+  color: white;
+}
+.login {
+  background-color: #d1d7e0;
+  border-radius: 20px;
+  height: 40px;
+  width: 20vh;
+  margin-top: 50px;
+  color: #802bb1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 25px;
+  font-family: "Mulish", sans-serif;
+  padding: 10px;
+  font-weight: bold;
+}
+.login:hover {
+  cursor: pointer;
+}
+.company {
+  display: flex;
+}
