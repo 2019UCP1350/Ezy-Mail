@@ -22,7 +22,12 @@ const LoginPage = ({ history }) => {
     setClass_signup("signup nodisplay");
     setClass_signin("signin");
   }
-  useEffect(() => { tryLocalLogin() }, []);
+  useEffect(() => { 
+    tryLocalLogin();
+    if(token){
+      history.push("/home");
+    }
+  }, [token,tryLocalLogin,history]);
   return (
     <div>
       <div className="logincontainer">
