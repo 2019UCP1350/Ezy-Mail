@@ -23,7 +23,7 @@ function EmailInput() {
     }, []);
     const submit = async () => {
         if (to.length && cc.length){
-            setBtn("compose--loading");
+            setBtn("composebutton compose--loading");
             try {
                 var result=await axios.post("/addlist", {
                     to,
