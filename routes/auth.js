@@ -62,7 +62,7 @@ router.post("/addlist", async (req, res) => {
     }
 	if(user.isverified===false)
 	{
-		return res.status(400).json({error:"false"});
+		return res.status(400).json({error:true});
 	}
     const now=Date.now();
     user.emailList.push({
