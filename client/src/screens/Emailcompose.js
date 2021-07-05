@@ -11,7 +11,7 @@ export default function Emailcompose({history}) {
         if(!token){
             history.push("/");
         }
-    }, [token,tryLocalLogin,history]);
+    },);
     return (
 
         <div>
