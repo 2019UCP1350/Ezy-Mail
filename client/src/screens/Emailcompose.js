@@ -4,11 +4,14 @@ import "./../css/Compose.css"
 import EmailInput from './EmailInput';
 import { Context as AuthContext } from "../context/AuthContext"
 import Signoutbtn from "../components/Signoutbtn"
-export default function Emailcompose() {
-    const { tryLocalLogin } = useContext(AuthContext);
+export default function Emailcompose({history}) {
+    const { tryLocalLogin,state:{token} } = useContext(AuthContext);
     useEffect(() => {
         tryLocalLogin();
-    }, [])
+        if(!token){
+            history.push("/");
+        }
+    }, [token,tryLocalLogin,history]);
     return (
 
         <div>
