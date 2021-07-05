@@ -5,11 +5,14 @@ import { Context as AuthContext } from "../context/AuthContext"
 import Signoutbtn from "../components/Signoutbtn"
 import ReactHtmlParser from 'react-html-parser';
 
-function History() { 
-  const { tryLocalLogin } = useContext(AuthContext);
+function History({history}) { 
+  const { tryLocalLogin,state:{token} } = useContext(AuthContext);
   const [userData, setUserData] = useState([]);
   useEffect(() => {
     tryLocalLogin();
+    if(!token){
+      history.push("/");
+    }
     const PostData = async () => {
       try {
         let res = await fetch(`/history/${localStorage.getItem("email")}`, {
