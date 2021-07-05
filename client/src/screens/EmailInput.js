@@ -134,7 +134,7 @@ function EmailInput() {
                 <div className="form__group field">
                     <select
                         className="form__field"
-                        value={schedule}
+                       
                         onChange={({ target }) => { setSchedule(target.value) }}
                         required
                     >
