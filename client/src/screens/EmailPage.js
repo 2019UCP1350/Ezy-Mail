@@ -4,19 +4,20 @@ import "../css/Email.css";
 import { Context as AuthContext } from "../context/AuthContext"
 import Signoutbtn from "../components/Signoutbtn"
 
-function EmailPage() {
-  const { tryLocalLogin } = useContext(AuthContext);
+function EmailPage({history}) {
+  const { tryLocalLogin,state:{token} } = useContext(AuthContext);
   useEffect(() => {
     tryLocalLogin();
+    if(!token){
+      history.push("/");
+    }
     init(document.querySelectorAll(".card"), {
       max: 25,
       speed: 400,
       glare: true,
       "max-glare": 1,
     });
-  }, []);
-
-
+  }, [tryLocalLogin,token,history]);
   return (
     <div className="glass">
       <Signoutbtn></Signoutbtn>
