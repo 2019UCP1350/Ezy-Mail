@@ -20,6 +20,8 @@ function EmailInput() {
         tryLocalLogin();
     }, []);
     const submit = async () => {
+        var element = document.getElementById("composebuttonid");
+        element.classList.toggle("compose--loading");
         if (to.length && cc.length)
             try {
                 var result=await axios.post("/addlist", {
@@ -151,20 +153,10 @@ function EmailInput() {
                     onChange={(value) => setContent(value)}
                 />
             </div>
-
-            <div className="input1" onClick={submit}>
-                <div className="button">
-                    <div className="button__text">Send Mail</div>
-
-                    <div className="button__wrapper">
-                        <div className="button__arrow"></div>
-                        <div className="button__border-circle"></div>
-                        <div className="button__mask-circle">
-                            <div className="button__small-circle"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button type ="button" id="composebuttonid" class="composebutton" onClick={submit}>
+                <span class="button_text">Send Mail</span>
+            </button>
+            
         </div>
     );
 }
