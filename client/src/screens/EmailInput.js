@@ -37,7 +37,7 @@ function EmailInput() {
                 }
               
                     else{
-                    history.push("https://ezy-mail1.herokuapp.com/");
+                    history.push("/history");
                 }
             } catch (error) {
                 
