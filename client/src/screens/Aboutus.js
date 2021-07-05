@@ -10,7 +10,7 @@ export default function Aboutus({history}) {
         if(!token){
             history.push("/");
           }
-    }, [token,tryLocalLogin,history]);
+    }, [tryLocalLogin,history]);
     return (
         <div className="teammain">
             <Signoutbtn />
