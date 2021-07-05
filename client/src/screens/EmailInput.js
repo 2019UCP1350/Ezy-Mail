@@ -11,7 +11,7 @@ function EmailInput() {
     const [to, setTo] = useState([]);
     const [cc, setCc] = useState([]);
     const [subject, setSubject] = useState("");
-    const [schedule, setSchedule] = useState("");
+    const [schedule, setSchedule] = useState("1");
     const [content, setContent] = useState("");
     const [btn,setBtn]=useState("composebutton");
     const {
