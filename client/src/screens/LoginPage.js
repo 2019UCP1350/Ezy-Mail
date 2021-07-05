@@ -27,7 +27,7 @@ const LoginPage = ({ history }) => {
     if(token){
       history.push("/home");
     }
-  }, [token,tryLocalLogin,history]);
+  }, );
   return (
     <div>
       <div className="logincontainer">
