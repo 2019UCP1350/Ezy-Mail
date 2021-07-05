@@ -4,9 +4,10 @@ import axios from "../Api/axios";
 import "react-quill/dist/quill.snow.css";
 import { useHistory } from "react-router-dom";
 import "../css/EmailInput.css";
-let history = useHistory();
+
 import { Context as AuthContext } from "../context/AuthContext";
 function EmailInput() {
+    let history = useHistory();
     const [to, setTo] = useState([]);
     const [cc, setCc] = useState([]);
     const [subject, setSubject] = useState("");
