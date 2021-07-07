@@ -1,17 +1,9 @@
-import React, { useEffect, useContext } from 'react'
+import React from 'react'
 import { ReactComponent as Emailcomposeimage } from ".././images/emailcompose.svg"
 import "./../css/Compose.css"
-import EmailInput from './EmailInput';
-import { Context as AuthContext } from "../context/AuthContext"
+import EmailInput from '../components/EmailInput';
 import Signoutbtn from "../components/Signoutbtn"
-export default function Emailcompose({history}) {
-    const { tryLocalLogin,state:{token} } = useContext(AuthContext);
-    useEffect(() => {
-        tryLocalLogin();
-        if(!token){
-            history.push("/");
-        }
-    },);
+export default function Emailcompose() {
     return (
 
         <div>

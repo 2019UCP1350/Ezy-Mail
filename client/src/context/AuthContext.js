@@ -26,6 +26,8 @@ const signin = (dispatch) => {
   return async ({ email, password, history }) => {
     try {
       console.log("abc");
+      console.log(email);
+      console.log(password);
       const response = await Api.post("/signin", { email, password });
       console.log("kunal");
       await localStorage.setItem("token", response.data.token);

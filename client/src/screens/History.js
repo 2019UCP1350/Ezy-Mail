@@ -1,21 +1,16 @@
 import React from 'react'
-import { useState, useEffect, useContext } from "react";
-import EmailCard from './EmailCard';
-import { Context as AuthContext } from "../context/AuthContext"
+import { useState, useEffect } from "react";
+import EmailCard from '../components/EmailCard';
 import Signoutbtn from "../components/Signoutbtn"
 import ReactHtmlParser from 'react-html-parser';
 
-function History({history}) { 
-  const { tryLocalLogin,state:{token} } = useContext(AuthContext);
+function History() { 
+
   const [userData, setUserData] = useState([]);
   useEffect(() => {
-    tryLocalLogin();
-    if(!token){
-      history.push("/");
-    }
     const PostData = async () => {
       try {
-        let res = await fetch(`/history/${localStorage.getItem("email")}`, {
+        let res = await fetch(`/history/${ await localStorage.getItem("email")}`, {
           method: "get",
           headers: {
             "Content-Type": "application/json",
@@ -29,7 +24,6 @@ function History({history}) {
         console.log(err.message);
       }
     };
-
     PostData();
   },);
 

@@ -1,23 +1,17 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { init } from "vanilla-tilt";
 import "../css/Email.css";
-import { Context as AuthContext } from "../context/AuthContext"
 import Signoutbtn from "../components/Signoutbtn"
 
-function EmailPage({history}) {
-  const { tryLocalLogin,state:{token} } = useContext(AuthContext);
+function EmailPage() {
   useEffect(() => {
-    tryLocalLogin();
-    if(!token){
-      history.push("/");
-    }
     init(document.querySelectorAll(".card"), {
       max: 25,
       speed: 400,
       glare: true,
       "max-glare": 1,
     });
-  }, );
+  },[] );
   return (
     <div className="glass">
       <Signoutbtn></Signoutbtn>

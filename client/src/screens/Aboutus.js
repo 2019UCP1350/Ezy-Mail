@@ -1,16 +1,8 @@
-import React, { useEffect, useContext } from 'react'
+import React from 'react'
 import { ReactComponent as Team } from ".././images/team.svg"
-import "./../css/team.css"
-import { Context as AuthContext } from "../context/AuthContext";
 import Signoutbtn from "../components/Signoutbtn"
-export default function Aboutus({history}) {
-    const { tryLocalLogin,state:{token} } = useContext(AuthContext);
-    useEffect(() => {
-        tryLocalLogin();
-        if(!token){
-            history.push("/");
-          }
-    }, );
+import "./../css/team.css"
+export default function Aboutus() {
     return (
         <div className="teammain">
             <Signoutbtn />

@@ -6,7 +6,7 @@ import EmailPage from "./screens/EmailPage";
 import Emailcompose from "./screens/Emailcompose";
 import History from "./screens/History";
 import Aboutus from "./screens/Aboutus";
-
+import ProtectedRoutes from "./components/protectedRoutes";
 
 export default function App() {
   return (
@@ -14,9 +14,15 @@ export default function App() {
       <Switch>
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/home" component={EmailPage} />
-        <Route exact path="/compose" component={Emailcompose} />
-        <Route exact path="/history" component={History} />
+        <Route exact path="/home" >
+          <ProtectedRoutes Component={EmailPage} />
+        </Route>
+        <Route exact path="/compose" >
+          <ProtectedRoutes Component={Emailcompose} />
+        </Route>
+        <Route exact path="/history"  >
+          <ProtectedRoutes Component={History} />
+        </Route>
         <Route exact path="/aboutus" component={Aboutus} />
 
       </Switch>

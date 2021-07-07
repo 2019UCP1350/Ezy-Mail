@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App.js";
-import Aboutus from "./screens/Aboutus.js";
 import { Provider as AuthProvider } from "./context/AuthContext";
 
 

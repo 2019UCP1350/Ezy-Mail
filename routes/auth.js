@@ -3,6 +3,7 @@ const nodemailer=require('nodemailer')
 const  User = require('../User.js');
 const bcrypt =  require('bcrypt');
 const jwt = require('jsonwebtoken');
+
 const transporter=nodemailer.createTransport({
     service:'gmail',
     auth:{
@@ -10,6 +11,7 @@ const transporter=nodemailer.createTransport({
         pass:'bhandari',
     }
 });
+
 router.post('/register', async (req, res) => {
     const emailExist = await User.findOne({
         email: req.body.email
@@ -50,7 +52,7 @@ router.get('/verify/:id',async(req,res)=>{
     const user = await User.findById(req.params.id);
     user.isverified = true;
     await User.findOneAndUpdate({_id:req.params.id},user);
-    return res.redirect("https://localhost:3000/home");
+    return res.redirect("https://ezy-mail1.herokuapp.com/home");
 });
 
 router.post("/addlist", async (req, res) => {
@@ -127,7 +129,6 @@ router.post('/Osignup',async (req,res)=>{
 // });
 router.post('/signin',async (req,res)=>{
 	const {email,password}=req.body;
-  console.log(req.body);
 	if (!email || !password )
 		return res.status(422).send({error: 'Must provide an email or password '});
 	const user=await User.findOne({email});
