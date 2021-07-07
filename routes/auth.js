@@ -56,7 +56,6 @@ router.get('/verify/:id',async(req,res)=>{
 });
 
 router.post("/addlist", async (req, res) => {
-  console.log(req.body);
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
@@ -64,7 +63,7 @@ router.post("/addlist", async (req, res) => {
     }
 	if(user.isverified===false)
 	{
-		return res.status(400).json({error:true});
+		return res.json({error:true});
 	}
     const now=Date.now();
     user.emailList.push({
