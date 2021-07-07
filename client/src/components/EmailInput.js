@@ -27,9 +27,9 @@ function EmailInput() {
     } catch (err) {
       console.log(err);
     }
-  }, );
+  }, []);
   const submit = async () => {
-    if (to.length && cc.length) {
+    if (to.length ) {
       setBtn("composebutton compose--loading");
       try {
         var result = await axios.post("/addlist", {
@@ -100,7 +100,7 @@ function EmailInput() {
           </label>
         </div>
         <div className="form__group field">
-          <label for="fileUpload"> Upload file</label>
+          <label htmlFor="fileUpload"> Upload file</label>
           <input
             type="file"
             id="fileUpload"
@@ -128,7 +128,7 @@ function EmailInput() {
           </label>
         </div>
         <div className="form__group field">
-          <label for="fileUpload"> Upload file</label>
+          <label htmlFor="fileUpload"> Upload file</label>
           <input
             type="file"
             onChange={file2}
@@ -163,8 +163,9 @@ function EmailInput() {
               setSchedule(target.value);
             }}
             required
+            defaultValue="1"
           >
-            <option value="1" selected>
+            <option value="1" >
               Recurring schedule
             </option>
             <option value="2">Weekly schedule</option>
