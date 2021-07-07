@@ -25,11 +25,7 @@ const AuthReducer = (state, action) => {
 const signin = (dispatch) => {
   return async ({ email, password, history }) => {
     try {
-      console.log("abc");
-      console.log(email);
-      console.log(password);
       const response = await Api.post("/signin", { email, password });
-      console.log("kunal");
       await localStorage.setItem("token", response.data.token);
       await localStorage.setItem("name", response.data.name);
       await localStorage.setItem("email", response.data.email);
@@ -114,26 +110,25 @@ const Osignup = (dispatch) => {
   };
 };
 
-const update = (dispatch) => {
-  return async ({ email, level }) => {
-    try {
-      await Api.post("/update", { email, level });
-      dispatch({ type: "update", payload: { level } });
-      await localStorage.setItem("level", level);
-    } catch (err) {
-      dispatch({ type: "add_error", payload: "Something Went Wrong" });
-    }
-  };
-};
+// const update = (dispatch) => {
+//   return async ({ email, level }) => {
+//     try {
+//       await Api.post("/update", { email, level });
+//       dispatch({ type: "update", payload: { level } });
+//       await localStorage.setItem("level", level);
+//     } catch (err) {
+//       dispatch({ type: "add_error", payload: "Something Went Wrong" });
+//     }
+//   };
+// };
 
 const tryLocalLogin = (dispatch) => {
   return async () => {
     const token = await localStorage.getItem("token");
     const username = await localStorage.getItem("name");
-    const level = await localStorage.getItem("level");
     const email = await localStorage.getItem("email");
     if (token) {
-      dispatch({ type: "signup", payload: { token, username, level, email } });
+      dispatch({ type: "signup", payload: { token, username, email } });
     }
   };
 };
@@ -148,6 +143,6 @@ const signout = (dispatch) => {
 
 export const { Context, Provider } = createDataContext(
   AuthReducer,
-  { signup, signin, update, signout, tryLocalLogin, Osignup },
+  { signup, signin, signout, tryLocalLogin, Osignup },
   { token: null, username: "", email: "" }
 );
